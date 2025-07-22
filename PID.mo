@@ -1,8 +1,6 @@
 within MiorLib;
 block PID
   import Modelica.Blocks.Types.Init;
-  import MiorLib.RealInput;
-  import Modelica.Blocks.Interfaces.RealOutput;
 
   constant Real unitTime=1 annotation(HideResult=true);
 
@@ -21,7 +19,7 @@ block PID
   Modelica.Blocks.Types.Init.InitialOutput, x_start = 0, y_start = 0, x(start = 0), T=max([Td/Nd,
   100*Modelica.Constants.eps]))  annotation(
     Placement(transformation(origin = {-125, -125}, extent = {{-25, -25}, {25, 25}})));
-  Gain proportional annotation(
+  Gain proportional(k = 1)  annotation(
     Placement(transformation(origin = {-125, 125}, extent = {{-25, -25}, {25, 25}})));
   Gain P annotation(
     Placement(transformation(origin = {-50, 125}, extent = {{-25, -25}, {25, 25}})));
@@ -33,9 +31,9 @@ block PID
     Placement(transformation(origin = {150, 0}, extent = {{-25, -25}, {25, 25}})));
   Bias bias annotation(
     Placement(transformation(origin = {100, -100}, extent = {{-25, -25}, {25, 25}})));
-  RealInput SP annotation(
+  MiorLib.RealInput SP annotation(
     Placement(transformation(origin = {-350, 0}, extent = {{-25, -25}, {25, 25}}), iconTransformation(origin = {-350, 0}, extent = {{-25, -25}, {25, 25}})));
-  RealInput PV annotation(
+  MiorLib.RealInput PV annotation(
     Placement(transformation(origin = {-225, -200}, extent = {{-25, -25}, {25, 25}}, rotation = 90), iconTransformation(origin = {-225, -200}, extent = {{-25, -25}, {25, 25}}, rotation = 90)));
   Feedback feedback annotation(
     Placement(transformation(origin = {-225, 0}, extent = {{-25, -25}, {25, 25}})));
@@ -64,12 +62,12 @@ equation
     Line(points = {{-350, 0}, {-250, 0}}, color = {0, 0, 120}));
   connect(feedback.error, integrator.u) annotation(
     Line(points = {{-212.5, 0}, {-155, 0}}, color = {0, 0, 120}));
-  connect(add2.y, y) annotation(
-    Line(points = {{170, 0}, {300, 0}}, color = {0, 0, 120}));
   connect(feedback.error, proportional.u) annotation(
     Line(points = {{-210, 0}, {-180, 0}, {-180, 125}, {-150, 125}}, color = {0, 0, 120}));
   connect(feedback.error, derivative.u) annotation(
     Line(points = {{-210, 0}, {-180, 0}, {-180, -125}, {-155, -125}}, color = {0, 0, 120}));
+  connect(add2.y, y) annotation(
+    Line(points = {{170, 0}, {300, 0}}, color = {0, 0, 120}));
   annotation(
     uses(Modelica(version = "4.1.0")),
   Icon(coordinateSystem(extent = {{-350, -200}, {350, 200}}, initialScale = 1, grid = {5, 5}), graphics = {Text( extent = {{-100, 50}, {100, -50}}, textString = "PID", fontName = "Lucida Console"), Rectangle( lineThickness = 3, extent = {{140, 120}, {-140, -120}}),         
