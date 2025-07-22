@@ -28,6 +28,9 @@
 /Line.+arrow = / {
     $0 = gensub("arrow\\s*=\\s*{.+}", "arrow = {Arrow.None, Arrow.None}", "g", $0)
 }
+/grid = {[0-9]+, [0-9]+/ {
+    $0 = gensub("grid = {[0-9]+, [0-9]+}", "grid = {5, 5}", "g", $0)
+}
 
 {
     print
