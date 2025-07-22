@@ -1,6 +1,6 @@
 within MiorLib;
 block Add3
-  RealInput u1 annotation(
+  MiorLib.RealInput u1 annotation(
     Placement(transformation(origin = {-120, 0}, extent = {{-50, -20}, {50, 20}}), iconTransformation(origin = {-120, 0}, extent = {{-50, -20}, {50, 20}})));
   MiorLib.RealInput u2 annotation(
     Placement(transformation(origin = {0, 120}, extent = {{-50, -20}, {50, 20}}, rotation = -90), iconTransformation(origin = {0, 120}, extent = {{-50, -20}, {50, 20}}, rotation = -90)));
