@@ -1,8 +1,11 @@
 within MiorLib;
 block PID
   import Modelica.Blocks.Types.Init;
+  import Modelica.Blocks.Interfaces.RealInput;
+  import Modelica.Blocks.Interfaces.RealOutput;
+
   constant Real unitTime=1 annotation(HideResult=true);
-  Modelica.Blocks.Interfaces.RealInput error annotation(
+  RealInput error annotation(
     Placement(transformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}})));
   Modelica.Blocks.Math.Gain P(k = 1) annotation(
     Placement(transformation(origin = {-20, 0}, extent = {{-60, 60}, {-20, 100}})));
@@ -32,7 +35,7 @@ block PID
     Placement(transformation(origin = {60, 0}, extent = {{-10, -10}, {10, 10}})));
   Bias bias annotation(
     Placement(transformation(origin = {50, -40}, extent = {{-20, -20}, {20, 20}})));
-  Modelica.Blocks.Interfaces.RealOutput y annotation(
+  RealOutput y annotation(
     Placement(transformation(origin = {160, -0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {160, -0}, extent = {{-20, -20}, {20, 20}})));
 equation
   connect(P.y, Pout.u) annotation(
