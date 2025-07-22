@@ -3,8 +3,6 @@ block Step
   parameter Real t = 1 "Time when step occurs";
   parameter Real offset = 0 "Initial value before step";
   parameter Real height = 1 "Amount added after step time";
-  Modelica.Blocks.Interfaces.RealOutput y annotation(
-    Placement(transformation(origin = {70, 0}, extent = {{-10, -10}, {10, 10}}), iconTransformation(origin = {140, 0}, extent = {{-20, -20}, {20, 20}})));
 equation
   y = if time < t then offset else offset + height;
   annotation(
