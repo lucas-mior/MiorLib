@@ -2,7 +2,7 @@ within MiorLib;
 
 block Bias
   RealOutput y annotation(
-    Placement(transformation(extent = {{-50, -50}, {50, 50}}), iconTransformation(extent = {{-50, -50}, {50, 50}})));
+    Placement(transformation(extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {100, 0}, extent = {{-50, -50}, {50, 50}})));
 equation
   der(y) = 0;
   annotation(
