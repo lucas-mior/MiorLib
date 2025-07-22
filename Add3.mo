@@ -1,18 +1,18 @@
 within MiorLib;
 block Add3
-  Modelica.Blocks.Interfaces.RealInput u1 annotation(
-    Placement(transformation(origin = {-100, 90}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-140, 0}, extent = {{-20, -20}, {20, 20}})));
-  Modelica.Blocks.Interfaces.RealInput u2 annotation(
-    Placement(transformation(origin = {-100, -90}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {0, -140}, extent = {{-20, -20}, {20, 20}}, rotation = 90)));
-  Modelica.Blocks.Interfaces.RealInput u3(start = 0) = 0 annotation(
-    Placement(transformation(origin = {-100, -90}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {0, 140}, extent = {{-20, -20}, {20, 20}}, rotation = -90)));
-  Modelica.Blocks.Interfaces.RealOutput y annotation(
-    Placement(transformation(origin = {100, 0}, extent = {{-10, -10}, {10, 10}}), iconTransformation(origin = {140, 0}, extent = {{-20, -20}, {20, 20}})));
+  RealInput u1 annotation(
+    Placement(transformation(origin = {-120, 0}, extent = {{-50, -25}, {50, 25}}), iconTransformation(origin = {-120, 0}, extent = {{-50, -25}, {50, 25}})));
+  MiorLib.RealInput u2 annotation(
+    Placement(transformation(origin = {0, 120}, extent = {{-50, -25}, {50, 25}}, rotation = -90), iconTransformation(origin = {0, 120}, extent = {{-50, -25}, {50, 25}}, rotation = -90)));
+  MiorLib.RealInput u3 annotation(
+    Placement(transformation(origin = {0, -120}, extent = {{-50, -25}, {50, 25}}, rotation = 90), iconTransformation(origin = {0, -120}, extent = {{-50, -25}, {50, 25}}, rotation = 90)));
+  RealOutput y annotation(
+    Placement(transformation(origin = {75, 0}, extent = {{-50, -25}, {50, 25}}), iconTransformation(origin = {75, 0}, extent = {{-50, -25}, {50, 25}})));
 equation
   y = u1 + u2 + u3;
 annotation(
-    Icon(graphics = {Ellipse(lineThickness = 1, extent = {{120, -120}, {-120, 120}}), Line(points = {{0, 80}, {0, -80}}, thickness = 8), Line(rotation = -90, points = {{0, 80}, {0, -80}}, thickness = 8)}, coordinateSystem(extent = {{-170, -170}, {170, 170}}, initialScale = 1.0)),
+    Icon(graphics = {Ellipse(lineThickness = 1, extent = {{100, -100}, {-100, 100}}), Line(points = {{0, 60}, {0, -60}}, thickness = 8), Line(rotation = -90, points = {{0, 60}, {0, -60}}, thickness = 8)}, coordinateSystem(extent = {{-100, -100}, {100, 100}}, initialScale = 1, grid = {5, 5})),
     uses(Modelica(version = "4.1.0")),
     version = "",
-    Diagram);
+    Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}}, initialScale = 1, grid = {5, 5})));
 end Add3;
