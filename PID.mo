@@ -66,11 +66,11 @@ equation
     Line(points = {{110, 0}, {150, 0}}, color = {0, 0, 120}));
   annotation(
     uses(Modelica(version = "4.1.0")),
-  Icon(coordinateSystem(extent = {{-140, -120}, {140, 120}}, initialScale = 1.0, grid = {0, 0}), graphics = {Text( origin = {-0, 0},extent = {{-100, 50}, {100, -50}}, textString = "PID", fontName = "Lucida Console"), Rectangle( lineThickness = 3, extent = {{140, 120}, {-140, -120}}),         
+  Icon(coordinateSystem(extent = {{-140, -120}, {140, 120}}, initialScale = 1.0, grid = {5, 5}), graphics = {Text( origin = {-0, 0},extent = {{-100, 50}, {100, -50}}, textString = "PID", fontName = "Lucida Console"), Rectangle( lineThickness = 3, extent = {{140, 120}, {-140, -120}}),         
   Text(
           origin = {0, 10},textColor={0,0, 250},
           extent={{-150,40},{150,80}},
           textString= "k=%k Ti=%Ti"), Text(origin = {0, -130}, textColor = {0, 0, 250}, extent = {{-150, 40}, {150, 80}}, textString = "Td=%Td Nd=%Nd")}),
   version = "",
-  Diagram(coordinateSystem(extent = {{-140, -120}, {140, 120}}, grid = {0, 0}, initialScale = 1.0)));
+  Diagram(coordinateSystem(extent = {{-140, -120}, {140, 120}}, grid = {5, 5}, initialScale = 1.0)));
 end PID;
