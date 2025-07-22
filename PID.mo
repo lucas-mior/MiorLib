@@ -36,27 +36,27 @@ block PID
     Placement(transformation(origin = {160, -0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {160, -0}, extent = {{-20, -20}, {20, 20}})));
 equation
   connect(P.y, Pout.u) annotation(
-    Line(points = {{-30, 80}, {-10, 80}}, color = {0, 0, 120}, thickness = 0.8, arrow = {Arrow.Filled, Arrow.None}));
+    Line(points = {{-30, 80}, {-10, 80}}, color = {0, 0, 120}, thickness = 0.75, arrow = {Arrow.None, Arrow.None}));
   connect(I.y, Iout.u) annotation(
-    Line(points = {{-30, 0}, {-10, 0}}, color = {0, 0, 120}, thickness = 0.8, arrow = {Arrow.Filled, Arrow.None}));
+    Line(points = {{-30, 0}, {-10, 0}}, color = {0, 0, 120}, thickness = 0.75, arrow = {Arrow.None, Arrow.None}));
   connect(Iout.y, Add.u2) annotation(
-    Line(points = {{0, 0}, {20, 0}}, color = {0, 0, 120}, thickness = 0.8, arrow = {Arrow.Filled, Arrow.None}));
+    Line(points = {{0, 0}, {20, 0}}, color = {0, 0, 120}, thickness = 0.75, arrow = {Arrow.None, Arrow.None}));
   connect(D.y, Dout.u) annotation(
-    Line(points = {{-30, -80}, {-10, -80}}, color = {0, 0, 120}, thickness = 0.8, arrow = {Arrow.Filled, Arrow.None}));
+    Line(points = {{-30, -80}, {-10, -80}}, color = {0, 0, 120}, thickness = 0.75, arrow = {Arrow.None, Arrow.None}));
   connect(Dout.y, Add.u3) annotation(
-    Line(points = {{0, -80}, {10, -80}, {10, -0}, {20, -0}}, color = {0, 0, 120}, thickness = 0.8, arrow = {Arrow.Filled, Arrow.None}));
+    Line(points = {{0, -80}, {10, -80}, {10, -0}, {20, -0}}, color = {0, 0, 120}, thickness = 0.75, arrow = {Arrow.None, Arrow.None}));
   connect(Pout.y, Add.u1) annotation(
-    Line(points = {{0, 80}, {10, 80}, {10, 0}, {20, 0}}, color = {0, 0, 120}, thickness = 0.8, arrow = {Arrow.Filled, Arrow.None}));
+    Line(points = {{0, 80}, {10, 80}, {10, 0}, {20, 0}}, color = {0, 0, 120}, thickness = 0.75, arrow = {Arrow.None, Arrow.None}));
   connect(error, I.u) annotation(
-    Line(points = {{-120, 0}, {-80, 0}}, color = {0, 0, 120}, thickness = 0.8, arrow = {Arrow.Filled, Arrow.None}));
+    Line(points = {{-120, 0}, {-80, 0}}, color = {0, 0, 120}, thickness = 0.75, arrow = {Arrow.None, Arrow.None}));
   connect(error, P.u) annotation(
-    Line(points = {{-120, 0}, {-90, 0}, {-90, 80}, {-80, 80}}, color = {0, 0, 120}, thickness = 0.8, arrow = {Arrow.Filled, Arrow.None}));
+    Line(points = {{-120, 0}, {-90, 0}, {-90, 80}, {-80, 80}}, color = {0, 0, 120}, thickness = 0.75, arrow = {Arrow.None, Arrow.None}));
   connect(error, D.u) annotation(
-    Line(points = {{-120, 0}, {-90, 0}, {-90, -80}, {-80, -80}}, color = {0, 0, 120}, thickness = 0.8, arrow = {Arrow.Filled, Arrow.None}));
+    Line(points = {{-120, 0}, {-90, 0}, {-90, -80}, {-80, -80}}, color = {0, 0, 120}, thickness = 0.75, arrow = {Arrow.None, Arrow.None}));
   connect(Add.y, action.u) annotation(
-    Line(points = {{40, 0}, {50, 0}}, color = {0, 0, 120}, thickness = 0.8, arrow = {Arrow.Filled, Arrow.None}));
+    Line(points = {{40, 0}, {50, 0}}, color = {0, 0, 120}, thickness = 0.75, arrow = {Arrow.None, Arrow.None}));
   connect(action.y, add2.u1) annotation(
-    Line(points = {{70, 0}, {80, 0}}, color = {0, 0, 120}, thickness = 0.8, arrow = {Arrow.Filled, Arrow.None}));
+    Line(points = {{70, 0}, {80, 0}}, color = {0, 0, 120}, thickness = 0.75, arrow = {Arrow.None, Arrow.None}));
   connect(bias.y, add2.u2) annotation(
     Line(points = {{84.74, -40}, {100.74, -40}, {100.74, -10}}, color = {0, 0, 120}));
   connect(add2.y, y) annotation(
