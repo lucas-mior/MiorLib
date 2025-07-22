@@ -1,7 +1,7 @@
 within MiorLib;
 block PID
   import Modelica.Blocks.Types.Init;
-  import Modelica.Blocks.Interfaces.RealInput;
+  import MiorLib.RealInput;
   import Modelica.Blocks.Interfaces.RealOutput;
 
   constant Real unitTime=1 annotation(HideResult=true);
