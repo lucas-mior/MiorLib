@@ -34,7 +34,7 @@ block PID
   Feedback feedback annotation(
     Placement(transformation(origin = {-225, 0}, extent = {{-25, -25}, {25, 25}})));
   RealOutput MV annotation(
-    Placement(transformation(origin = {300, 0}, extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {400, 0}, extent = {{-75, -75}, {75, 75}})));
+    Placement(transformation(origin = {350, 0}, extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {400, 0}, extent = {{-75, -75}, {75, 75}})));
   RealInput SP annotation(
     Placement(transformation(origin = {-400, 0}, extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {-400, 0}, extent = {{-75, -75}, {75, 75}})));
   RealInput PV annotation(
@@ -67,14 +67,14 @@ equation
   connect(bias.y, add2.u2) annotation(
     Line(points = {{150, -100}, {175, -100}, {175, -30}}, color = {0, 0, 120}));
   connect(add2.y, MV) annotation(
-    Line(points = {{200, 0}, {300, 0}}, color = {0, 0, 120}));
+    Line(points = {{200, 0}, {350, 0}}, color = {0, 0, 120}, thickness = 2));
   annotation(
     uses(Modelica(version = "4.1.0")),
-  Icon(coordinateSystem(extent = {{-400, -400}, {400, 400}}, initialScale = 1, grid = {5, 5}), graphics = {Text( origin = {-1, 46}, extent = {{-189, 89}, {189, -89}}, textString = "PID", fontName = "Lucida Console"), Rectangle( lineThickness = 1, extent = {{400, 400}, {-400, -400}}),         
+  Icon(coordinateSystem(extent = {{-400, -400}, {400, 400}}, initialScale = 1, grid = {5, 5}), graphics = {Text( origin = {-1, 46}, extent = {{-189, 89}, {189, -89}}, textString = "PID", fontName = "Lucida Console"), Rectangle( lineThickness = 3, extent = {{400, 400}, {-400, -400}}),         
   Text(
-          origin = {6.5, 5},textColor={0,0, 250},
-          extent={{-256,155},{257,310}},
-          textString= "k=%k Ti=%Ti"), Text(origin = {-3.5, -460}, textColor = {0, 0, 250}, extent = {{-288, 160}, {289, 320}}, textString = "Td=%Td Nd=%Nd")}),
+          origin = {1.5, 25},textColor={0,0, 250},
+          extent={{-400,100},{400,300}},
+          textString= "k=%k Ti=%Ti"), Text(origin = {-3.5, -460}, textColor = {0, 0, 250}, extent = {{-400, 100}, {400, 300}}, textString = "Td=%Td Nd=%Nd")}),
   version = "",
   Diagram(coordinateSystem(extent = {{-400, -400}, {400, 400}}, grid = {5, 5}, initialScale = 1)),
   experiment(StartTime = 0, StopTime = 1, Tolerance = 1e-06, Interval = 0.002),
