@@ -1,5 +1,9 @@
 #!/usr/bin/awk -f
 
+BEGIN {
+  buffer = ""
+}
+
 /initialScale/ {
     $0 = gensub("initialScale = [0-9.]+", "initialScale = 1.0", "g", $0);
 }
@@ -34,17 +38,35 @@
     $0 = gensub(",[ ]*\([0-9]*\)[6-9]}", ", \\10}", "g", $0);
 }
 
- /Line.+thickness =.+arrow/ {
+/Line.+thickness =.+arrow/ {
     $0 = gensub("thickness = [0-9.]+", "thickness = 0.75", "g", $0)
 }
 
 /Line.+arrow = / {
     $0 = gensub("arrow\\s*=\\s*{.+}", "arrow = {Arrow.None, Arrow.None}", "g", $0)
 }
+
 /grid = {[0-9]+, [0-9]+/ {
     $0 = gensub("grid = {[0-9]+, [0-9]+}", "grid = {5, 5}", "g", $0)
 }
 
+/^ *connect\(.*annotation\( *$/ {
+    buffer = $0
+    next
+}
+
+/^ *Line\(.*\);[ ]*$/ {
+    if (buffer != "") {
+        print buffer $0
+        buffer = ""
+        next
+    }
+}
+
 {
+    if (buffer != "") {
+        print buffer
+        buffer = ""
+    }
     print
 }
