@@ -45,7 +45,7 @@ equation
   connect(feedback.error, integrator.u) annotation(
     Line(points = {{-210, 0}, {-155, 0}}, color = {0, 0, 120}));
   connect(PV, feedback.PV) annotation(
-    Line(points = {{-225, -400}, {-225, -25}}, color = {0, 0, 120}));
+    Line(points = {{-225, -400}, {-225, -25}}, color = {0, 0, 120}, thickness = 2));
   connect(feedback.error, derivative.u) annotation(
     Line(points = {{-210, 0}, {-185, 0}, {-185, -125}, {-155, -125}}, color = {0, 0, 120}));
   connect(feedback.error, proportional.u) annotation(
