@@ -38,8 +38,12 @@ BEGIN {
     $0 = gensub(",[ ]*\([0-9]*\)[6-9]}", ", \\10}", "g", $0);
 }
 
-/Line.+thickness/ {
-    $0 = gensub("thickness = [0-9.]+", "thickness = 2.0", "g", $0)
+/connect.+Line/ {
+    if ($0 !~ "thickness") {
+        $0 = gensub("));", ", thickness = 2.0));", "g", $0)
+    } else {
+        $0 = gensub("thickness = [0-9.]+", "thickness = 2.0", "g", $0)
+    }
 }
 
 /Line.+arrow = / {
