@@ -1,10 +1,10 @@
 within MiorLib;
 block Add3
-  RealInput u1 annotation(
+  RealInput u1 annotation(HideResult = true,
     Placement(transformation(origin = {-125, 0}, extent = {{-25, -25}, {25, 25}}), iconTransformation(origin = {-125, 0}, extent = {{-25, -25}, {25, 25}})));
-  MiorLib.RealInput u2 annotation(
+  MiorLib.RealInput u2 annotation(HideResult = true,
     Placement(transformation(origin = {0, -125}, extent = {{-25, -25}, {25, 25}}, rotation = 90), iconTransformation(origin = {0, -125}, extent = {{-25, -25}, {25, 25}}, rotation = 90)));
-  RealInput u3 annotation(
+  RealInput u3 annotation(HideResult = true,
     Placement(transformation(origin = {0, 125}, extent = {{-25, -25}, {25, 25}}, rotation = -90), iconTransformation(origin = {0, 125}, extent = {{-25, -25}, {25, 25}}, rotation = -90)));
   RealOutput y annotation(
     Placement(transformation(origin = {75, 0}, extent = {{-25, -25}, {25, 25}}), iconTransformation(origin = {100, 0}, extent = {{-25, -25}, {25, 25}})));

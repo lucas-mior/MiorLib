@@ -2,11 +2,11 @@ within MiorLib;
 
 block Gain "Output the product of a gain value with the input signal"
   parameter Real k(start=1)
-    "Gain value multiplied with input signal";
+    "Gain value"  annotation(HideResult = true);
   RealInput u annotation(
     Placement(transformation(origin = {-100, 0}, extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {-100, 0}, extent = {{-50, -50}, {50, 50}})));
   RealOutput y annotation(
-    Placement(transformation(extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {100, 5}, extent = {{-50, -50}, {50, 50}})));
+    Placement(transformation(extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {100, 0}, extent = {{-50, -50}, {50, 50}})));
 equation
   y = k*u;
   annotation (

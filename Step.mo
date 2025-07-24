@@ -1,8 +1,8 @@
 within MiorLib;
 block Step
-  parameter Real t = 1 "Time when step occurs";
-  parameter Real offset = 0 "Initial value before step";
-  parameter Real height = 1 "Amount added after step time";
+  parameter Real t = 1 "Time when step occurs" annotation(HideResult = true);
+  parameter Real offset = 0 "Initial value before step" annotation(HideResult = true);
+  parameter Real height = 1 "Amount added after step time" annotation(HideResult = true);
   RealOutput y annotation(
     Placement(transformation(origin = {100, 0}, extent = {{-25, -25}, {25, 25}}), iconTransformation(origin = {100, 0}, extent = {{-25, -25}, {25, 25}})));
 equation

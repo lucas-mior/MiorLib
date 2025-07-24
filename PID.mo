@@ -4,31 +4,36 @@ block PID
 
   constant Real unitTime=1 annotation(HideResult=true);
 
-  parameter Real k(unit="1", start=1) "Gain";
+  parameter Real k(unit="1", start=1) "PID Gain";
   parameter Real Ti(min=Modelica.Constants.small, start=0.5)
     "Time Constant of Integrator";
   parameter Real Td(min=0, start=0.1)
     "Time Constant of Derivative block";
   parameter Real Nd(min=Modelica.Constants.small) = 10
-    "The higher Nd, the more ideal the derivative block";
-  Add3 action annotation(
+    "Time parameter Nd: The higher Nd, the more ideal the derivative block";
+    
+  Gain actionP(k = k) "action Proportional"  annotation(
+    Placement(transformation(origin = {-40, 125}, extent = {{-25, -25}, {25, 25}})));
+  Gain actionI(k = k) "action Integral" annotation(
+    Placement(transformation(origin = {-40, 0}, extent = {{-25, -25}, {25, 25}})));
+  Gain actionD(k = k) "action Derivative" annotation(
+    Placement(transformation(origin = {-40, -125}, extent = {{-25, -25}, {25, 25}})));
+  Add3 action "action" annotation(
     Placement(transformation(origin = {75, 0}, extent = {{-25, -25}, {25, 25}})));
+    
+protected
   Modelica.Blocks.Continuous.Integrator integrator(k = unitTime/Ti, initType = Modelica.Blocks.Types.Init.InitialOutput, y_start = 0)  annotation(
     Placement(transformation(origin = {-125, 0}, extent = {{-25, -25}, {25, 25}})));
   Modelica.Blocks.Continuous.Derivative derivative(k = Td/unitTime, initType =
-  Modelica.Blocks.Types.Init.InitialState, x_start = 0, y_start = 0, x(start = 0), T=max([Td/Nd,
+  Modelica.Blocks.Types.Init.InitialOutput, x_start = 0, y_start = 0, x(start = 0, fixed = false), T=max([Td/Nd,
   100*Modelica.Constants.eps]))  annotation(
     Placement(transformation(origin = {-125, -125}, extent = {{-25, -25}, {25, 25}})));
   Gain proportional(k = 1)  annotation(
     Placement(transformation(origin = {-125, 125}, extent = {{-25, -25}, {25, 25}})));
-  Gain P(k = k)  annotation(
-    Placement(transformation(origin = {-40, 125}, extent = {{-25, -25}, {25, 25}})));
-  Gain I(k = k)  annotation(
-    Placement(transformation(origin = {-40, 0}, extent = {{-25, -25}, {25, 25}})));
-  Gain D(k = k)  annotation(
-    Placement(transformation(origin = {-40, -125}, extent = {{-25, -25}, {25, 25}})));
   Add2 add2 annotation(
     Placement(transformation(origin = {175, 0}, extent = {{-25, -25}, {25, 25}})));
+
+public
   Bias bias annotation(
     Placement(transformation(origin = {125, -100}, extent = {{-25, -25}, {25, 25}})));
   Feedback feedback annotation(
@@ -47,20 +52,20 @@ equation
   connect(PV, feedback.PV) annotation(
     Line(points = {{-225, -400}, {-225, -25}}, color = {0, 0, 120}, thickness = 2));
   connect(feedback.error, derivative.u) annotation(
-    Line(points = {{-210, 0}, {-185, 0}, {-185, -125}, {-155, -125}}, color = {0, 0, 120}));
+    Line(points = {{-210, 0}, {-185, 0}, {-185, -125}, {-155, -125}}, color = {0, 0, 120}, thickness = 2));
   connect(feedback.error, proportional.u) annotation(
     Line(points = {{-210, 0}, {-185, 0}, {-185, 125}, {-150, 125}}, color = {0, 0, 120}));
-  connect(integrator.y, I.u) annotation(
+  connect(integrator.y, actionI.u) annotation(
     Line(points = {{-95, 0}, {-65, 0}}, color = {0, 0, 127}));
-  connect(derivative.y, D.u) annotation(
-    Line(points = {{-95, -125}, {-65, -125}}, color = {0, 0, 127}));
-  connect(proportional.y, P.u) annotation(
+  connect(derivative.y, actionD.u) annotation(
+    Line(points = {{-97.5, -125}, {-65, -125}}, color = {0, 0, 127}, thickness = 2));
+  connect(proportional.y, actionP.u) annotation(
     Line(points = {{-100, 125}, {-65, 125}}, color = {0, 0, 120}));
-  connect(P.y, action.u3) annotation(
+  connect(actionP.y, action.u3) annotation(
     Line(points = {{-15, 125}, {75, 125}, {75, 31}}, color = {0, 0, 120}));
-  connect(I.y, action.u1) annotation(
+  connect(actionI.y, action.u1) annotation(
     Line(points = {{-15, 0}, {45, 0}}, color = {0, 0, 120}));
-  connect(D.y, action.u2) annotation(
+  connect(actionD.y, action.u2) annotation(
     Line(points = {{-15, -125}, {75, -125}, {75, -30}}, color = {0, 0, 120}));
   connect(action.y, add2.u1) annotation(
     Line(points = {{100, 0}, {145, 0}}, color = {0, 0, 120}));
