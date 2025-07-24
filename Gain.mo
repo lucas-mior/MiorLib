@@ -21,6 +21,6 @@ y = k * u;
 </pre></blockquote>
 
 </html>"),
-  Icon(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}, initialScale = 1, grid = {5, 5}), graphics = {Text(extent = {{-150, -140}, {150, -100}}, textString = "k=%k"), Text(textColor = {0, 0, 255}, extent = {{-150, 140}, {150, 100}}, textString = "%name"), Polygon( fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid,lineThickness = 5, points = {{-100, 100}, {100, 0}, {-100, -100}, {-100, 100}})}),
+  Icon(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}, initialScale = 1.0, grid = {5, 5}), graphics = {Text(extent = {{-150, -140}, {150, -100}}, textString = "k=%k"), Text(textColor = {0, 0, 255}, extent = {{-150, 140}, {150, 100}}, textString = "%name"), Polygon( fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid,lineThickness = 5, points = {{-100, 100}, {100, 0}, {-100, -100}, {-100, 100}})}),
   Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 1.0, grid = {5, 5})));
 end Gain;

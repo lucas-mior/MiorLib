@@ -47,31 +47,24 @@ public
   RealInput PV "PID process variable" annotation(
     Placement(transformation(origin = {-225, -400}, extent = {{-50, -50}, {50, 50}}, rotation = 90), iconTransformation(origin = {0, -400}, extent = {{-100, -100}, {100, 100}}, rotation = 90)));
 equation
-  connect(SP, feedback.SP) annotation(    Line(points = {{-400, 0}, {-250, 0}}, color = {0, 0, 120}));
-  connect(PV, feedback.PV) annotation(    Line(points = {{-225, -400}, {-225, -25}}, color = {0, 0, 120}, thickness = 2));
-  connect(integrator.y, actionI.u) annotation(    Line(points = {{-95, 0}, {-65, 0}}, color = {0, 0, 120}));
-  connect(derivative.y, actionD.u) annotation(    Line(points = {{-97.5, -125}, {-65, -125}}, color = {0, 0, 120}, thickness = 2));
-  connect(proportional.y, actionP.u) annotation(    Line(points = {{-100, 125}, {-65, 125}}, color = {0, 0, 120}));
-  connect(action.y, add_bias.u1) annotation(    Line(points = {{100, 0}, {145, 0}}, color = {0, 0, 120}));
-  connect(bias.y, add_bias.u2) annotation(    Line(points = {{150, -100}, {175, -100}, {175, -30}}, color = {0, 0, 120}));
-  connect(add_bias.y, MV) annotation(    Line(points = {{200, 0}, {350, 0}}, color = {0, 0, 120}, thickness = 2));
-  connect(feedback.error, integrator.u) annotation(
-    Line(points = {{-200, 0}, {-155, 0}}, color = {0, 0, 127}, thickness = 2));
-  connect(feedback.error, proportional.u) annotation(
-    Line(points = {{-200, 0}, {-170, 0}, {-170, 125}, {-150, 125}}, color = {0, 0, 127}, thickness = 2));
-  connect(actionP.y, action.u3) annotation(
-    Line(points = {{-15, 125}, {75, 125}, {75, 25}}, color = {0, 0, 127}, thickness = 2));
-  connect(actionI.y, action.u1) annotation(
-    Line(points = {{-15, 0}, {50, 0}}, thickness = 2));
-  connect(actionD.y, action.u2) annotation(
-    Line(points = {{-15, -125}, {75, -125}, {75, -25}}, color = {0, 0, 127}, thickness = 2));
-  connect(PV, negative.u) annotation(
-    Line(points = {{-225, -400}, {-175, -400}, {-175, -250}}, color = {0, 0, 120}, thickness = 2));
-  connect(negative.y, derivative.u) annotation(
-    Line(points = {{-175, -200}, {-175, -125}, {-155, -125}}, color = {0, 0, 127}, thickness = 2));
+  connect(SP, feedback.SP) annotation(    Line(points = {{-400, 0}, {-250, 0}}, color = {0, 0, 120}, thickness = 2.0));
+  connect(PV, feedback.PV) annotation(    Line(points = {{-225, -400}, {-225, -25}}, color = {0, 0, 120}, thickness = 2.0));
+  connect(integrator.y, actionI.u) annotation(    Line(points = {{-95, 0}, {-65, 0}}, color = {0, 0, 120}, thickness = 2.0));
+  connect(derivative.y, actionD.u) annotation(    Line(points = {{-97.5, -125}, {-65, -125}}, color = {0, 0, 120}, thickness = 2.0));
+  connect(proportional.y, actionP.u) annotation(    Line(points = {{-100, 125}, {-65, 125}}, color = {0, 0, 120}, thickness = 2.0));
+  connect(action.y, add_bias.u1) annotation(    Line(points = {{100, 0}, {145, 0}}, color = {0, 0, 120}, thickness = 2.0));
+  connect(bias.y, add_bias.u2) annotation(    Line(points = {{150, -100}, {175, -100}, {175, -30}}, color = {0, 0, 120}, thickness = 2.0));
+  connect(add_bias.y, MV) annotation(    Line(points = {{200, 0}, {350, 0}}, color = {0, 0, 120}, thickness = 2.0));
+  connect(feedback.error, integrator.u) annotation(    Line(points = {{-200, 0}, {-155, 0}}, color = {0, 0, 120}, thickness = 2));
+  connect(feedback.error, proportional.u) annotation(    Line(points = {{-200, 0}, {-170, 0}, {-170, 125}, {-150, 125}}, color = {0, 0, 120}, thickness = 2));
+  connect(actionP.y, action.u3) annotation(    Line(points = {{-15, 125}, {75, 125}, {75, 25}}, color = {0, 0, 120}, thickness = 2));
+  connect(actionI.y, action.u1) annotation(    Line(points = {{-15, 0}, {50, 0}}, thickness = 2));
+  connect(actionD.y, action.u2) annotation(    Line(points = {{-15, -125}, {75, -125}, {75, -25}}, color = {0, 0, 120}, thickness = 2));
+  connect(PV, negative.u) annotation(    Line(points = {{-225, -400}, {-175, -400}, {-175, -250}}, color = {0, 0, 120}, thickness = 2));
+  connect(negative.y, derivative.u) annotation(    Line(points = {{-175, -200}, {-175, -125}, {-155, -125}}, color = {0, 0, 120}, thickness = 2));
   annotation(
     uses(Modelica(version = "4.1.0")),
-  Icon(coordinateSystem(extent = {{-400, -400}, {400, 400}}, initialScale = 1, grid = {5, 5}), graphics = {Text(  extent = {{-180, 80}, {180, -80}}, textString = "PID", fontName = "Lucida Console"), Rectangle( lineThickness = 3, extent = {{400, 400}, {-400, -400}}),         
+  Icon(coordinateSystem(extent = {{-400, -400}, {400, 400}}, initialScale = 1.0, grid = {5, 5}), graphics = {Text(  extent = {{-180, 80}, {180, -80}}, textString = "PID", fontName = "Lucida Console"), Rectangle( lineThickness = 3, extent = {{400, 400}, {-400, -400}}),         
   Text(
           origin = {1.5, 25},textColor={0,0, 250},
           extent={{-400,100},{400,300}},
