@@ -11,6 +11,6 @@ equation
 error = SP - PV;
 
   annotation(
-    Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, initialScale = 1, grid = {5, 5}), graphics = {Line(origin = {50, -75}, points = {{-25, 0}, {25, 0}, {25, 0}}, thickness = 3), Line(origin = {-75, 50}, points = {{-25, 0}, {25, 0}, {25, 0}}, thickness = 3), Line(origin = {-75, 50}, rotation = -90, points = {{-25, 0}, {25, 0}, {25, 0}}, thickness = 3), Ellipse(  lineThickness = 1.05, extent = {{-50, 50}, {50, -50}})}),
+    Icon(coordinateSystem(extent = {{-100, -100}, {100, 100}}, initialScale = 1.0, grid = {5, 5}), graphics = {Line(origin = {50, -75}, points = {{-25, 0}, {25, 0}, {25, 0}}, thickness = 3), Line(origin = {-75, 50}, points = {{-25, 0}, {25, 0}, {25, 0}}, thickness = 3), Line(origin = {-75, 50}, rotation = -90, points = {{-25, 0}, {25, 0}, {25, 0}}, thickness = 3), Ellipse(  lineThickness = 1.05, extent = {{-50, 50}, {50, -50}})}),
     Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}}, initialScale = 1.0, grid = {5, 5}), graphics));
 end Feedback;
