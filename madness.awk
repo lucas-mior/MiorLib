@@ -42,7 +42,10 @@ BEGIN {
     if ($0 !~ "thickness") {
         $0 = gensub("));", ", thickness = 2));", "g", $0)
     } else {
-        $0 = gensub("thickness = [0-9.]+", "thickness = 2", "g", $0)
+        thick = strtonum(gensub(".*thickness = \([0-9.]+\).*", "\\1", "g", $0))
+        if (thick < 2) {
+            $0 = gensub("thickness = [0-9.]+", "thickness = 2", "g", $0)
+        }
     }
     if ($0 !~ "color") {
         $0 = gensub("));", ", color = {0, 0, 120}));", "g", $0)
