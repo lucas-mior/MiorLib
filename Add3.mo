@@ -1,12 +1,9 @@
 within MiorLib;
 block Add3
-  RealInput u1 annotation(HideResult = true,
-    Placement(transformation(origin = {-125, 0}, extent = {{-25, -25}, {25, 25}}), iconTransformation(origin = {-125, 0}, extent = {{-25, -25}, {25, 25}})));
-  MiorLib.RealInput u2 annotation(HideResult = true,
-    Placement(transformation(origin = {0, -125}, extent = {{-25, -25}, {25, 25}}, rotation = 90), iconTransformation(origin = {0, -125}, extent = {{-25, -25}, {25, 25}}, rotation = 90)));
-  RealInput u3 annotation(HideResult = true,
-    Placement(transformation(origin = {0, 125}, extent = {{-25, -25}, {25, 25}}, rotation = -90), iconTransformation(origin = {0, 125}, extent = {{-25, -25}, {25, 25}}, rotation = -90)));
-  RealOutput y annotation(
+  MiorLib.RealInput2 u1 annotation(Placement(transformation(origin = {-125, 0}, extent = {{-25, -25}, {25, 25}}), iconTransformation(origin = {-100, 0}, extent = {{-25, -25}, {25, 25}})));
+  MiorLib.RealInput2 u2 annotation(Placement(transformation(origin = {0, -125}, extent = {{-25, -25}, {25, 25}}, rotation = 90), iconTransformation(origin = {0, -100}, extent = {{-25, -25}, {25, 25}}, rotation = 90)));
+  MiorLib.RealInput2 u3 annotation(Placement(transformation(origin = {0, 125}, extent = {{-25, -25}, {25, 25}}, rotation = -90), iconTransformation(origin = {0, 100}, extent = {{-25, -25}, {25, 25}}, rotation = -90)));
+  MiorLib.RealOutput3 y annotation(
     Placement(transformation(origin = {75, 0}, extent = {{-25, -25}, {25, 25}}), iconTransformation(origin = {100, 0}, extent = {{-25, -25}, {25, 25}})));
 equation
   y = u1 + u2 + u3;
