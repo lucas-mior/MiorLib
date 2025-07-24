@@ -64,7 +64,7 @@ equation
   connect(negative.y, derivative.u) annotation(    Line(points = {{-175, -200}, {-175, -125}, {-155, -125}}, color = {0, 0, 120}, thickness = 2));
   annotation(
     uses(Modelica(version = "4.1.0")),
-  Icon(coordinateSystem(extent = {{-400, -400}, {400, 400}}, initialScale = 1.0, grid = {5, 5}), graphics = {Text(  extent = {{-180, 80}, {180, -80}}, textString = "PID", fontName = "Lucida Console"), Rectangle( lineThickness = 3, extent = {{400, 400}, {-400, -400}}),         
+  Icon(coordinateSystem(extent = {{-400, -400}, {400, 400}}, initialScale = 1, grid = {5, 5}), graphics = {Text(  origin = {0, 480},extent = {{-200, 100}, {200, -100}}, textString = "PID", fontName = "Lucida Console"), Rectangle( lineThickness = 3, extent = {{400, 400}, {-400, -400}}),         
   Text(
           origin = {1.5, 25},textColor={0,0, 250},
           extent={{-400,100},{400,300}},
