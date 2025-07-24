@@ -20,6 +20,8 @@ block PID
     Placement(transformation(origin = {-40, -125}, extent = {{-25, -25}, {25, 25}})));
   Add3 action "action" annotation(
     Placement(transformation(origin = {75, 0}, extent = {{-25, -25}, {25, 25}})));
+  Gain negative(k = -1)  annotation(
+    Placement(transformation(origin = {-175, -225}, extent = {{-25, -25}, {25, 25}}, rotation = 90)));
     
 protected
   Modelica.Blocks.Continuous.Integrator integrator(k = unitTime/Ti, initType = Modelica.Blocks.Types.Init.InitialOutput, y_start = 0)  annotation(
@@ -32,8 +34,6 @@ protected
     Placement(transformation(origin = {-125, 125}, extent = {{-25, -25}, {25, 25}})));
   Add2 add_bias annotation(
     Placement(transformation(origin = {175, 0}, extent = {{-25, -25}, {25, 25}})));
-
-public
   Bias bias annotation(
     Placement(transformation(origin = {125, -100}, extent = {{-25, -25}, {25, 25}})));
   Feedback feedback annotation(
@@ -53,8 +53,6 @@ equation
   connect(action.y, add_bias.u1) annotation(    Line(points = {{100, 0}, {145, 0}}, color = {0, 0, 120}));
   connect(bias.y, add_bias.u2) annotation(    Line(points = {{150, -100}, {175, -100}, {175, -30}}, color = {0, 0, 120}));
   connect(add_bias.y, MV) annotation(    Line(points = {{200, 0}, {350, 0}}, color = {0, 0, 120}, thickness = 2));
-  connect(feedback.error, derivative.u) annotation(
-    Line(points = {{-200, 0}, {-170, 0}, {-170, -125}, {-155, -125}}, color = {0, 0, 127}, thickness = 2));
   connect(feedback.error, integrator.u) annotation(
     Line(points = {{-200, 0}, {-155, 0}}, color = {0, 0, 127}, thickness = 2));
   connect(feedback.error, proportional.u) annotation(
@@ -65,6 +63,10 @@ equation
     Line(points = {{-15, 0}, {50, 0}}, thickness = 2));
   connect(actionD.y, action.u2) annotation(
     Line(points = {{-15, -125}, {75, -125}, {75, -25}}, color = {0, 0, 127}, thickness = 2));
+  connect(PV, negative.u) annotation(
+    Line(points = {{-225, -400}, {-175, -400}, {-175, -250}}, color = {0, 0, 120}, thickness = 2));
+  connect(negative.y, derivative.u) annotation(
+    Line(points = {{-175, -200}, {-175, -125}, {-155, -125}}, color = {0, 0, 127}, thickness = 2));
   annotation(
     uses(Modelica(version = "4.1.0")),
   Icon(coordinateSystem(extent = {{-400, -400}, {400, 400}}, initialScale = 1, grid = {5, 5}), graphics = {Text(  extent = {{-180, 80}, {180, -80}}, textString = "PID", fontName = "Lucida Console"), Rectangle( lineThickness = 3, extent = {{400, 400}, {-400, -400}}),         
