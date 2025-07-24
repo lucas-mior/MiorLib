@@ -1,11 +1,11 @@
 within MiorLib;
 block Add2
-  RealInput u1 annotation(HideResult = true,
-    Placement(transformation(origin = {-125, 0}, extent = {{-25, -25}, {25, 25}}), iconTransformation(origin = {-125, 0}, extent = {{-25, -25}, {25, 25}})));
-  RealInput u2 annotation(HideResult = true,
-    Placement(transformation(origin = {0, -125}, extent = {{-25, -25}, {25, 25}}, rotation = 90), iconTransformation(origin = {0, -125}, extent = {{-25, -25}, {25, 25}}, rotation = 90)));
-  RealOutput y annotation(
+  RealOutput3 y annotation(
     Placement(transformation(origin = {100, 0}, extent = {{-25, -25}, {25, 25}}), iconTransformation(origin = {100, 0}, extent = {{-25, -25}, {25, 25}})));
+  RealInput3 u1 annotation(
+    Placement(transformation(origin = {-200, -45}, extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {-100, 0}, extent = {{-25, -25}, {25, 25}})));
+  MiorLib.RealInput3 u2 annotation(
+    Placement(transformation(origin = {-210, -101}, extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {0, -101}, extent = {{-25, -25}, {25, 25}}, rotation = 90)));
 equation
   y = u1 + u2;
 annotation(

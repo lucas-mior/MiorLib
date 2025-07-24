@@ -39,11 +39,11 @@ public
   Feedback feedback annotation(
     Placement(transformation(origin = {-225, 0}, extent = {{-25, -25}, {25, 25}})));
   RealOutput MV "PID output = action + bias" annotation(
-    Placement(transformation(origin = {350, 0}, extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {400, 0}, extent = {{-75, -75}, {75, 75}})));
+    Placement(transformation(origin = {350, 0}, extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {400, 0}, extent = {{-100, -100}, {100, 100}})));
   RealInput SP "PID set point" annotation(
-    Placement(transformation(origin = {-400, 0}, extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {-400, 0}, extent = {{-75, -75}, {75, 75}})));
+    Placement(transformation(origin = {-400, 0}, extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {-400, 0}, extent = {{-100, -100}, {100, 100}})));
   RealInput PV "PID process variable" annotation(
-    Placement(transformation(origin = {-225, -400}, extent = {{-50, -50}, {50, 50}}, rotation = 90), iconTransformation(origin = {0, -400}, extent = {{-75, -75}, {75, 75}}, rotation = 90)));
+    Placement(transformation(origin = {-225, -400}, extent = {{-50, -50}, {50, 50}}, rotation = 90), iconTransformation(origin = {0, -400}, extent = {{-100, -100}, {100, 100}}, rotation = 90)));
 equation
   connect(SP, feedback.SP) annotation(    Line(points = {{-400, 0}, {-250, 0}}, color = {0, 0, 120}));
   connect(feedback.error, integrator.u) annotation(    Line(points = {{-210, 0}, {-155, 0}}, color = {0, 0, 120}));
@@ -61,11 +61,11 @@ equation
   connect(add_bias.y, MV) annotation(    Line(points = {{200, 0}, {350, 0}}, color = {0, 0, 120}, thickness = 2));
   annotation(
     uses(Modelica(version = "4.1.0")),
-  Icon(coordinateSystem(extent = {{-400, -400}, {400, 400}}, initialScale = 1.0, grid = {5, 5}), graphics = {Text( origin = {-0, 40}, extent = {{-180, 80}, {180, -80}}, textString = "PID", fontName = "Lucida Console"), Rectangle( lineThickness = 3, extent = {{400, 400}, {-400, -400}}),         
+  Icon(coordinateSystem(extent = {{-400, -400}, {400, 400}}, initialScale = 1, grid = {5, 5}), graphics = {Text(  extent = {{-180, 80}, {180, -80}}, textString = "PID", fontName = "Lucida Console"), Rectangle( lineThickness = 3, extent = {{400, 400}, {-400, -400}}),         
   Text(
           origin = {1.5, 25},textColor={0,0, 250},
           extent={{-400,100},{400,300}},
-          textString= "k=%k Ti=%Ti"), Text(origin = {-3.5, -460}, textColor = {0, 0, 250}, extent = {{-400, 100}, {400, 300}}, textString = "Td=%Td Nd=%Nd")}),
+          textString= "k=%k Ti=%Ti"), Text(origin = {-13.5, -405}, textColor = {0, 0, 250}, extent = {{-400, 100}, {400, 300}}, textString = "Td=%Td Nd=%Nd")}),
   version = "",
   Diagram(coordinateSystem(extent = {{-400, -400}, {400, 400}}, grid = {5, 5}, initialScale = 1.0)),
   experiment(StartTime = 0, StopTime = 1, Tolerance = 1e-06, Interval = 0.002),

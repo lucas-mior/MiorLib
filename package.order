@@ -6,4 +6,8 @@ Add2
 RealInput
 RealOutput
 Gain
+RealInput2
 Feedback
+RealOutput2
+RealInput3
+RealOutput3
