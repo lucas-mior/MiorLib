@@ -34,6 +34,8 @@ protected
     Placement(transformation(origin = {-125, 125}, extent = {{-25, -25}, {25, 25}})));
   Add2 add_bias annotation(
     Placement(transformation(origin = {175, 0}, extent = {{-25, -25}, {25, 25}})));
+
+public
   Bias bias annotation(
     Placement(transformation(origin = {125, -100}, extent = {{-25, -25}, {25, 25}})));
   Feedback feedback annotation(
