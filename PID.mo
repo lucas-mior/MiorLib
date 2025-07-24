@@ -66,9 +66,10 @@ equation
     uses(Modelica(version = "4.1.0")),
   Icon(coordinateSystem(extent = {{-400, -400}, {400, 400}}, initialScale = 1, grid = {5, 5}), graphics = {Text(  origin = {0, 480},extent = {{-200, 100}, {200, -100}}, textString = "PID", fontName = "Lucida Console"), Rectangle( lineThickness = 3, extent = {{400, 400}, {-400, -400}}),         
   Text(
-          origin = {1.5, 25},textColor={0,0, 250},
+          origin = {0, 70},textColor={0,0, 250},
           extent={{-400,100},{400,300}},
-          textString= "k=%k Ti=%Ti"), Text(origin = {-13.5, -405}, textColor = {0, 0, 250}, extent = {{-400, 100}, {400, 300}}, textString = "Td=%Td Nd=%Nd")}),
+          textString= "k=%k Ti=%Ti
+Td=%Td Nd=%Nd")}),
   version = "",
   Diagram(coordinateSystem(extent = {{-400, -400}, {400, 400}}, grid = {5, 5}, initialScale = 1)),
   experiment(StartTime = 0, StopTime = 1, Tolerance = 1e-06, Interval = 0.002),
