@@ -5,7 +5,7 @@ BEGIN {
 }
 
 /initialScale/ {
-    $0 = gensub("initialScale = [0-9.]+", "initialScale = 1.0", "g", $0);
+    $0 = gensub("initialScale = [0-9.]+", "initialScale = 1", "g", $0);
 }
 
 /Modelica\(version/ {

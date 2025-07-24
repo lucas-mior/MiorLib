@@ -47,18 +47,18 @@ public
   RealInput PV "PID process variable" annotation(
     Placement(transformation(origin = {-225, -400}, extent = {{-50, -50}, {50, 50}}, rotation = 90), iconTransformation(origin = {0, -400}, extent = {{-100, -100}, {100, 100}}, rotation = 90)));
 equation
-  connect(SP, feedback.SP) annotation(    Line(points = {{-400, 0}, {-250, 0}}, color = {0, 0, 120}, thickness = 2.0));
-  connect(PV, feedback.PV) annotation(    Line(points = {{-225, -400}, {-225, -25}}, color = {0, 0, 120}, thickness = 2.0));
-  connect(integrator.y, actionI.u) annotation(    Line(points = {{-95, 0}, {-65, 0}}, color = {0, 0, 120}, thickness = 2.0));
-  connect(derivative.y, actionD.u) annotation(    Line(points = {{-97.5, -125}, {-65, -125}}, color = {0, 0, 120}, thickness = 2.0));
-  connect(proportional.y, actionP.u) annotation(    Line(points = {{-100, 125}, {-65, 125}}, color = {0, 0, 120}, thickness = 2.0));
-  connect(action.y, add_bias.u1) annotation(    Line(points = {{100, 0}, {145, 0}}, color = {0, 0, 120}, thickness = 2.0));
-  connect(bias.y, add_bias.u2) annotation(    Line(points = {{150, -100}, {175, -100}, {175, -30}}, color = {0, 0, 120}, thickness = 2.0));
-  connect(add_bias.y, MV) annotation(    Line(points = {{200, 0}, {350, 0}}, color = {0, 0, 120}, thickness = 2.0));
+  connect(SP, feedback.SP) annotation(    Line(points = {{-400, 0}, {-250, 0}}, color = {0, 0, 120}, thickness = 2));
+  connect(PV, feedback.PV) annotation(    Line(points = {{-225, -400}, {-225, -25}}, color = {0, 0, 120}, thickness = 2));
+  connect(integrator.y, actionI.u) annotation(    Line(points = {{-95, 0}, {-65, 0}}, color = {0, 0, 120}, thickness = 2));
+  connect(derivative.y, actionD.u) annotation(    Line(points = {{-97.5, -125}, {-65, -125}}, color = {0, 0, 120}, thickness = 2));
+  connect(proportional.y, actionP.u) annotation(    Line(points = {{-100, 125}, {-65, 125}}, color = {0, 0, 120}, thickness = 2));
+  connect(action.y, add_bias.u1) annotation(    Line(points = {{100, 0}, {145, 0}}, color = {0, 0, 120}, thickness = 2));
+  connect(bias.y, add_bias.u2) annotation(    Line(points = {{150, -100}, {175, -100}, {175, -30}}, color = {0, 0, 120}, thickness = 2));
+  connect(add_bias.y, MV) annotation(    Line(points = {{200, 0}, {350, 0}}, color = {0, 0, 120}, thickness = 2));
   connect(feedback.error, integrator.u) annotation(    Line(points = {{-200, 0}, {-155, 0}}, color = {0, 0, 120}, thickness = 2));
   connect(feedback.error, proportional.u) annotation(    Line(points = {{-200, 0}, {-170, 0}, {-170, 125}, {-150, 125}}, color = {0, 0, 120}, thickness = 2));
   connect(actionP.y, action.u3) annotation(    Line(points = {{-15, 125}, {75, 125}, {75, 25}}, color = {0, 0, 120}, thickness = 2));
-  connect(actionI.y, action.u1) annotation(    Line(points = {{-15, 0}, {50, 0}}, thickness = 2));
+  connect(actionI.y, action.u1) annotation(    Line(points = {{-15, 0}, {50, 0}}, thickness = 2, color = {0, 0, 120}));
   connect(actionD.y, action.u2) annotation(    Line(points = {{-15, -125}, {75, -125}, {75, -25}}, color = {0, 0, 120}, thickness = 2));
   connect(PV, negative.u) annotation(    Line(points = {{-225, -400}, {-175, -400}, {-175, -250}}, color = {0, 0, 120}, thickness = 2));
   connect(negative.y, derivative.u) annotation(    Line(points = {{-175, -200}, {-175, -125}, {-155, -125}}, color = {0, 0, 120}, thickness = 2));
@@ -70,7 +70,7 @@ equation
           extent={{-400,100},{400,300}},
           textString= "k=%k Ti=%Ti"), Text(origin = {-13.5, -405}, textColor = {0, 0, 250}, extent = {{-400, 100}, {400, 300}}, textString = "Td=%Td Nd=%Nd")}),
   version = "",
-  Diagram(coordinateSystem(extent = {{-400, -400}, {400, 400}}, grid = {5, 5}, initialScale = 1.0)),
+  Diagram(coordinateSystem(extent = {{-400, -400}, {400, 400}}, grid = {5, 5}, initialScale = 1)),
   experiment(StartTime = 0, StopTime = 1, Tolerance = 1e-06, Interval = 0.002),
   __OpenModelica_commandLineOptions = "--matchingAlgorithm=PFPlusExt --indexReductionMethod=dynamicStateSelection -d=initialization,NLSanalyticJacobian",
   __OpenModelica_simulationFlags(lv = "LOG_STDOUT,LOG_ASSERT,LOG_STATS", s = "dassl", variableFilter = ".*"));
