@@ -11,9 +11,9 @@ block Saturation "Limit the range of a signal"
     Evaluate = true,
     Dialog(group = "Initialization"));
   RealInput3 u annotation(
-    Placement(transformation(origin = {-80, 10}, extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {-100, 0}, extent = {{-25, -25}, {25, 25}})));
+    Placement(iconTransformation(origin = {-100, 0}, extent = {{-25, -25}, {25, 25}})));
   RealOutput3 y annotation(
-    Placement(transformation(origin = {5, -40}, extent = {{-50, -50}, {50, 50}}), iconTransformation(origin = {100, 0}, extent = {{-25, -25}, {25, 25}})));
+    Placement(iconTransformation(origin = {100, 0}, extent = {{-25, -25}, {25, 25}})));
 protected
   Real simplifiedExpr "Simplified expression for homotopy-based initialization";
 equation
@@ -55,6 +55,5 @@ If it is known a priori in which region the input signal will be located, this o
 a lot by removing one strong nonlinearity from the initialization problem.
 </p>
 </html>"),
-  Icon(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}, initialScale = 1, grid = {5, 5}), graphics = {Line(points = {{0, -90}, {0, 60}}, color = {190, 192, 190}), Polygon(lineColor = {190, 192, 190}, fillColor = {190, 192, 190}, fillPattern = FillPattern.Solid, points = {{0, 90}, {-0, 60}, {0, 60}, {0, 90}}), Line(points = {{-90, 0}, {60, 0}}, color = {190, 192, 190}), Polygon(lineColor = {190, 192, 190}, fillColor = {190, 192, 190}, fillPattern = FillPattern.Solid, points = {{90, 0}, {60, -0}, {60, 0}, {90, 0}}), Line(points = {{-80, -70}, {-50, -70}, {50, 70}, {80, 70}}, thickness = 2), Text(extent = {{-150, -150}, {150, -110}}, textString = "[%uMin, %uMax]"), Line(visible = strict, points = {{50, 70}, {80, 70}}, color = {255, 0, 0}), Line(visible = strict, points = {{-80, -70}, {-50, -70}}, color = {255, 0, 0}), Rectangle(lineColor = {0, 0, 120}, lineThickness = 2, extent = {{-100, 100}, {100, -100}})}),
-  Diagram(coordinateSystem(extent = {{-100, -100}, {100, 100}}, preserveAspectRatio = true, initialScale = 1, grid = {5, 5})));
+  Icon(coordinateSystem(preserveAspectRatio = true, extent = {{-100, -100}, {100, 100}}, initialScale = 1, grid = {5, 5}), graphics = {Line(points = {{0, -90}, {0, 60}}, color = {190, 192, 190}), Polygon(lineColor = {190, 192, 190}, fillColor = {190, 192, 190}, fillPattern = FillPattern.Solid, points = {{0, 90}, {-0, 60}, {0, 60}, {0, 90}}), Line(points = {{-90, 0}, {60, 0}}, color = {190, 192, 190}), Polygon(lineColor = {190, 192, 190}, fillColor = {190, 192, 190}, fillPattern = FillPattern.Solid, points = {{90, 0}, {60, -0}, {60, 0}, {90, 0}}), Line(points = {{-80, -70}, {-50, -70}, {50, 70}, {80, 70}}, thickness = 2), Text(extent = {{-150, -150}, {150, -110}}, textString = "[%uMin, %uMax]"), Line(visible = strict, points = {{50, 70}, {80, 70}}, color = {255, 0, 0}), Line(visible = strict, points = {{-80, -70}, {-50, -70}}, color = {255, 0, 0}), Rectangle(lineColor = {0, 0, 120}, lineThickness = 2, extent = {{-100, 100}, {100, -100}})}));
 end Saturation;
